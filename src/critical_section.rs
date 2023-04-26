@@ -11,7 +11,7 @@ mod critical_section_single_core {
 
     unsafe impl critical_section::Impl for CriticalSection {
         // Without #[inline(never)] attribute, rustc tends to misoptimize for
-        // size on functions that use interrupt::free() or 
+        // size on functions that use interrupt::free() or
         // critical_section::with().
         // I don't believe #[inline] or #[inline(always)] hints work for
         // functions marked as "extern" in another crate (which is the case
